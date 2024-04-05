@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raffle Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Raffle Website</h1>
+        <div class="raffle-details">
+            <h2>Raffle Prize</h2>
+            <p>Description of the prize goes here.</p>
+            <p>Draw Date: [Insert Draw Date]</p>
+        </div>
+        <div class="raffle-entry">
+            <h2>Enter the Raffle</h2>
+            <form action="submit_entry.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <input type="submit" value="Enter Raffle">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
