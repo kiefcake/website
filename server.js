@@ -106,7 +106,7 @@ app.get('/verify', (req, res) => {
     });
 });
 
-const port = process.env.PORT || 3000; // Default to 3000 if PORT is not defined
+const port = process.env.PORT || 3306; // Default to 3000 if PORT is not defined
 app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+    console.log(`Server running at http://localhost:${port}`);
 });

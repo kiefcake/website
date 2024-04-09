@@ -1,8 +1,9 @@
-// authentication.js located in public/javascript
-
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('login-form');
     const registerForm = document.getElementById('register-form');
+
+    console.log('Login form:', loginForm);
+    console.log('Register form:', registerForm);
 
     // Function to perform a login request
     function login(username, password) {
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add event listeners if the forms exist on this page
     if (loginForm) {
         loginForm.addEventListener('submit', event => {
+            console.log('Login form submitted.');
             event.preventDefault();
             const username = document.getElementById('login-username').value;
             const password = document.getElementById('login-password').value;
@@ -61,7 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (registerForm) {
+        console.log('Register form exists.');
         registerForm.addEventListener('submit', event => {
+            console.log('Register form submitted.');
             event.preventDefault();
             // Gather registration data from form inputs
             const userData = {
@@ -72,6 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             register(userData);
         });
+    } else {
+        console.log('Register form does not exist.');
     }
 
     // Sign out logic

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Roffle Website</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Ensure this path is correct -->
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login/Register</a></li>
+                <li><a href="raffle.html">Raffles</a></li>
+                <li><a href="profile.html" class="active">Profile</a></li>
+                <li><a href="more.html">More</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="profile-section">
+            <h2>User Information</h2>
+            <div class="user-info">
+                <p><strong>Username:</strong> <span id="username"></span></p>
+                <p><strong>Email:</strong> <span id="email"></span></p>
+                <!-- You can include additional user information here -->
+            </div>
+            <button id="logout-btn" class="btn">Logout</button>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2024 Roffle Website</p>
+    </footer>
+
+    <!-- Include any JavaScript files or scripts here -->
+    <script src="javascript/profile.js" defer></script>
+</body>
+</html>

@@ -30,6 +30,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const token = localStorage.getItem('token');
     if (token) {
         // Verify token logic goes here...
+        fetch('/verify', {
+            headers: {
+                'Authorization': token
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message === 'The token is valid.') {
+                loginStatus.textContent = `You are already logged in as ${data.user.username}.`;
+                signOutButton.style.display = 'block';
+                toggleForm(true); // Show login form
+            } else {
+                // Token is invalid or expired, clear token and show login form
+                localStorage.removeItem('token');
+                toggleForm(true); // Show login form
+            }
+        })
+        .catch(error => {
+            console.error('Error verifying token:', error);
+            // Clear token and show login form
+            localStorage.removeItem('token');
+            toggleForm(true); // Show login form
+        });
+    } else {
+        // If no token, show login form
+        toggleForm(true);
     }
 
     // Sign-out functionality
@@ -43,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Login form submission handling
     // ... Your login form submission code goes here ...
-    
+
     // Toggle form visibility
     function toggleForm(showLogin) {
         if (showLogin) {
