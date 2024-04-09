@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5; /* Improves readability */
+}
+
+header, main, footer {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.banner, .navigation, .login-register-section, footer {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Consistent shadow for all sections */
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.navigation li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.navigation a.active, .navigation a:hover {
+    color: #0056b3;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+.btn-toggle {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-toggle:focus, .btn-toggle:hover {
+    background-color: #0056b3;
+    outline: none;
+}
+
+.form {
+    display: none; /* Initially hide forms to be toggled via JavaScript */
+}
+
+.form-hidden {
+    display: none;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin: 10px 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: calc(100% - 22px); /* Adjusts input width to fit container */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+input[type="submit"] {
+    width: 100%; /* Ensures the submit button stretches to container width */
+    box-sizing: border-box; /* Ensures padding and border are included in the total width */
+}
+
+/* Reusing focus styles for input and buttons for consistency */
+input:focus, .btn-toggle:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,.25);
+}
+
+.password-strength, .password-match {
+    font-size: 0.8em;
+    margin-top: -15px; /* Pulls up closer to the input field */
+    margin-bottom: 20px;
+}
