@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roffle Website</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Ensure this path is correct -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="javascript/validation.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <h1>Welcome to the Roffle Website</h1>
+            <p>Win a £100 Amazon Giftcard!</p>
+        </div>
+        <nav>
+            <ul class="navigation">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="login.html">Login/Register</a></li>
+                <li><a href="raffle.html">Raffles</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="more.html">More</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="login-register-section">
+            <h2>Enter the Roffle</h2>
+            <form action="submit_entry.php" method="post" class="form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Enter Roffle" class="btn">
+                </div>
+            </form>
+            <p><strong>Draw Date: 30th April 2024</strong></p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2024 Roffle Website</p>
+    </footer>
+</body>
+</html>

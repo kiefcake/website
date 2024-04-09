@@ -7,10 +7,10 @@
             },
             "previewLimit": 50,
             "server": "localhost",
-            "port": 3000,
+            "port": 3306,
             "driver": "MySQL",
             "name": "website",
-            "database": "logindetails",
+            "database": "LoginData",
             "username": "root",
             "password": "Toasted@12"
         }
