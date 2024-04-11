@@ -22,4 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Error fetching user profile:', error);
         // Handle errors, e.g., display an error message to the user
     });
+
+    // Event listener for logout button
+    const logoutButton = document.getElementById('logout-btn');
+    if (logoutButton) {
+        logoutButton.addEventListener('click', () => {
+            // Remove token from local storage
+            localStorage.removeItem('token');
+            // Redirect the user to the login page
+            window.location.href = 'login.html'; // Adjust the path as necessary
+        });
+    }
 });

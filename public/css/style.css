@@ -106,3 +106,51 @@ input[type="submit"]:hover {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+/* Additional styles for profile section */
+.profile-section {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    margin-bottom: 20px;
+}
+
+.user-info p {
+    margin: 5px 0;
+}
+
+.raffle-info {
+    margin-bottom: 20px;
+}
+
+.raffle-info h3 {
+    margin-bottom: 10px;
+}
+
+#raffle-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#raffle-list li {
+    margin-bottom: 5px;
+}
+
+/* Button Styles */
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}

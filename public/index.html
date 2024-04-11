@@ -11,7 +11,7 @@
     <header>
         <div class="banner">
             <h1>Welcome to the Roffle Website</h1>
-            <p>Win a £100 Amazon Giftcard!</p>
+            <p>Get the chance to win a £100 Amazon Giftcard, by entering the Roffle below!</p>
         </div>
         <nav>
             <ul class="navigation">
@@ -26,7 +26,7 @@
     <main>
         <section class="login-register-section">
             <h2>Enter the Roffle</h2>
-            <form action="submit_entry.php" method="post" class="form">
+            <form id="roffle-form" class="form">
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" placeholder="Enter your name" required aria-required="true">
@@ -36,7 +36,7 @@
                     <input type="email" id="email" name="email" placeholder="Enter your email" required aria-required="true">
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Enter Roffle" class="btn-submit">
+                    <button type="submit" class="btn-submit">Enter Roffle</button>
                 </div>
             </form>
             <p><strong>Draw Date: 30th April 2024</strong></p>
@@ -46,5 +46,14 @@
         <p>&copy; 2024 Roffle Website</p>
     </footer>
     <script src="javascript/validation.js" defer></script>
+    <script>
+        document.getElementById('roffle-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            // Generate a random lucky number between 1 and 100
+            const luckyNumber = Math.floor(Math.random() * 100) + 1;
+            // Display a message with the lucky number
+            alert(`Congratulations! You have entered the Roffle. Your lucky number is ${luckyNumber}. Good luck!`);
+        });
+    </script>
 </body>
 </html>
