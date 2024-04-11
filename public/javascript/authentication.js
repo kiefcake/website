@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to perform a login request
     function login(username, password) {
-        fetch('/login', {
+        fetch("/login", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

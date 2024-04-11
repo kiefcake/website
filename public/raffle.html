@@ -3,49 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roffle Website</title>
-    <link rel="stylesheet" href="css/style.css"> <!-- Ensure this path is correct -->
-    <link rel="icon" type="image/png" href="favicon.png">
-    <script src="javascript/validation.js" defer></script>
+    <title>Roffle Mania - Login/Register</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="javascript/Script.js" defer></script>
 </head>
 <body>
     <header>
         <div class="banner">
-            <h1>Welcome to the Roffle Website</h1>
-            <p>Win a £100 Amazon Giftcard!</p>
+            <h1>Join a raffle to maybe win</h1>
+            <p>Start with Roffle today.</p>
         </div>
         <nav>
             <ul class="navigation">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="login.html">Login/Register</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html" class="active">Login/Register</a></li>
                 <li><a href="raffle.html">Raffles</a></li>
                 <li><a href="profile.html">Profile</a></li>
                 <li><a href="more.html">More</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <section class="login-register-section">
-            <h2>Enter the Roffle</h2>
-            <form action="submit_entry.php" method="post" class="form">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required aria-required="true">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required aria-required="true">
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Enter Roffle" class="btn">
-                </div>
+        <h1>Active Raffles</h1>
+        <section id="roffle-list">
+            <!-- Roffle Entry -->
+            <article class="roffle-entry">
+                <h2>Prize Name #1</h2>
+                <img src="prize-image1.jpg" alt="Prize Image #1" class="roffle-img">
+                <p class="roffle-description">Description of prize #1...</p>
+                <div class="roffle-timer" data-countdown="2024-12-31T23:59:59">Time left: 14d 3h 6m</div>
+                <button class="roffle-enter">Enter Roffle</button>
+            </article>
+            <!-- More roffle entries can be added here -->
+        </section>
+        <button id="show-expired-btn">Show All Expired Roffles</button>
+        <section id="expired-roffles" class="hidden"></section>
+        
+        <button id="create-roffle-btn">Create Your Roffle</button>
+        <section id="create-roffle" class="hidden">
+            <h2>Create Your Roffle</h2>
+            <form id="roffle-form">
+                <input type="text" name="prize-name" placeholder="Prize Name" required>
+                <textarea name="prize-description" placeholder="Prize Description" required></textarea>
+                <input type="datetime-local" name="end-time" required>
+                <!-- Note: Handling file uploads would typically require server-side support -->
+                <input type="file" name="prize-image" accept="image/*">
+                <button type="submit">Create Roffle</button>
             </form>
-            <p><strong>Draw Date: 30th April 2024</strong></p>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <p>&copy; 2024 Roffle Website</p>
+    <footer>
+        <p>&copy; 2024 Roffle Mania. All rights reserved.</p>
     </footer>
+
+    <!-- Link to your JavaScript files -->
+    <script src="javascript/roffle.js" defer></script>
+    <script src="javascript/safe.js" defer></script>
+    
 </body>
 </html>

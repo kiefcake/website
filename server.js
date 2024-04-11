@@ -14,7 +14,8 @@ const db = mysql.createConnection({
     host: process.env.DB_HOST, // e.g., 'localhost'
     user: process.env.DB_USER, // e.g., 'root'
     password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+    //database: process.env.DB_NAME
+      database: "mydatabase"
 });
 
 db.connect(err => {
@@ -23,6 +24,15 @@ db.connect(err => {
         return;
     }
     console.log('Connected to MySQL database');
+
+    // Select the database
+    db.query('USE ' + process.env.DB_NAME, (error, results) => {
+        if (error) {
+            console.error('Error selecting database:', error);
+            return;
+        }
+        console.log('Database selected');
+    });
 });
 
 // User Registration Endpoint
@@ -106,7 +116,7 @@ app.get('/verify', (req, res) => {
     });
 });
 
-const port = process.env.PORT || 3306; // Default to 3000 if PORT is not defined
+const port = process.env.PORT || 3000; // Default to 3000 if PORT is not defined
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
